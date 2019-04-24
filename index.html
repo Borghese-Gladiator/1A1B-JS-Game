@@ -1,0 +1,95 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+    <body>
+        
+        <h1 align="center">Bulls and Cows (1A1B) </h1>
+        <h4><div id="clockbox" align="center"></div> </h4>
+        <div class="tab">
+          <button class="tablinks" onclick="openTab(event, 'Game')" >Game</button>
+          <button class="tablinks" onclick="openTab(event, 'Rules')" id="defaultOpen">Rules</button>
+          <button class="tablinks" onclick="openTab(event, 'About')">About Me</button>
+        </div>
+
+        <div id="Game" class="tabcontent">
+          <div class="some-page-wrapper">
+            <h3 id="showSecretLength"></h3>
+            <div class="row">
+              <div class="column">
+                <div id="buttons" style="padding-bottom: 10px; padding-top: 10px;">
+                </div>
+                <div>
+                  Your Guess: <input type="text" id="guess" value="0 1 2">
+                  <button class="btn btn-primary" onclick="userGuess()">Go</button>
+                </div>
+                <div>
+                  <button class="btn btn-light" onclick="clearInput()">Clear Input</button>
+                </div>
+                <div class="logo">
+                  <p>Num Tries:</p>
+                  <p id="numTries">0</p>
+                  <p>Timer: </p>
+                  <label id="minutes">00</label>:<label id="seconds">00</label>
+                </div>
+                <textarea id="previousGuesses" placeholder="Guesses will appear here" rows="4" cols="20" readonly></textarea>
+                <div class="row">
+                  <button class="btn btn-light" onclick="showAnswer()" style="margin-left: 15px;">Give Up</button>
+                  <h3 id="answer" style="margin-left: 20px;"></h3>
+                </div>
+              </div>
+              <div class="column">
+                <h3> Game Options </h3>
+                <h5>Difficulty - changes secret length from 3 to 5</h5>
+                <div id="difficulty">
+                  <input type="radio" name="difficulty" value="3" checked="checked"> Easy (3)<br>
+                  <input type="radio" name="difficulty" value="4"> Medium (4)<br>
+                  <input type="radio" name="difficulty" value="5"> Hard (5) <br>
+                </div><br>
+                <button class="btn btn-light" onclick="play()">New Game</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="Rules" class="tabcontent">
+          <h3>Quick Intro from Wikipedia</h3>
+          <h5>Link: <a href="https://en.wikipedia.org/wiki/Bulls_and_Cows">https://en.wikipedia.org/wiki/Bulls_and_Cows</a></h5>
+          <p>
+            The players try to guess their opponent's number who gives the number of matches. <b>If the matching digits are in their right positions, they are "bulls", if in different positions, they are "cows". </b> <br>
+             Example:
+
+              Secret number: 4271
+              Opponent's try: 1234
+              Answer: 1 bull and 2 cows. (The bull is "2", the cows are "4" and "1".)
+          <br>
+          It is proven that any number could be solved within seven turns. Minimal average game length is 26274/5040=5.2131 turns.[1][2] </p> 
+          <h5>Example</h5>
+          <img src="4digits_0.4_screenshot.png" alt="1A1B Example">
+        </div>
+
+        <div id="About" class="tabcontent">
+          <h3>About</h3>
+          <p>About is the capital of Japan.</p>
+        </div>
+        <!-- 
+          <input type="submit" value="Submit">
+          <b>Changing secret length will restart the game</b> <br>
+
+          <div class="topnav">
+            <a class="active" href="#home">New Game</a>
+            <a href="#difficulty">Difficulty</a>
+            <a href="#showAnswer">Show Answer</a>
+            <a href="#rules">Rules</a>
+            <a href="#about">About</a>
+          </div>
+          -->
+    </body>    
+</html>
